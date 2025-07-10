@@ -5,35 +5,37 @@ import java.util.*;
 public class Number_Guess_Game {
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
-        int score=0;
-        System.out.println("Are you want to play Multiple rounds or Until you win ( M or U ):");
-        char ch=in.next().trim().charAt(0);
-        switch(ch){
-            case 'M':
-                System.out.println("How many rounds you want:");
-                int rounds=in.nextInt();
-                int point=MultipleRound(rounds,score);
-                System.out.println("You scored "+point);
-                break;
-            case 'm':
-                System.out.println("How many rounds you want:");
-                int rouds=in.nextInt();
-                int pont=MultipleRound(rouds,score);
-                System.out.println("You scored "+pont);
-                break;
-            case 'U':
-                System.out.println("The game is to begin");
-                int points=UntilWin(score);
-                System.out.println("You scored "+points);
-                break;
-            case 'u':
-                System.out.println("The game is to begin");
-                int pints=UntilWin(score);
-                System.out.println("You scored "+pints);
-                break;
-            default:
-                System.out.println("Enter Invalid character");
-                break;
+        while(true){
+            int score=0;
+            System.out.println("Are you want to play Multiple rounds or Until you win ( M or U ):");
+            char ch=in.next().trim().charAt(0);
+            switch(ch){
+                case 'M':
+                    System.out.println("How many rounds you want:");
+                    int rounds=in.nextInt();
+                    int point=MultipleRound(rounds,score);
+                    System.out.println("You scored "+point);
+                    break;
+                case 'm':
+                    System.out.println("How many rounds you want:");
+                    int rouds=in.nextInt();
+                    int pont=MultipleRound(rouds,score);
+                    System.out.println("You scored "+pont);
+                    break;
+                case 'U':
+                    System.out.println("The game is to begin");
+                    int points=UntilWin(score);
+                    System.out.println("You scored "+points);
+                    break;
+                case 'u':
+                    System.out.println("The game is to begin");
+                    int pints=UntilWin(score);
+                    System.out.println("You scored "+pints);
+                    break;
+                default:
+                    System.out.println("Enter Invalid character");
+                    break;
+            }
         }
     }
     static int UntilWin(int points){
